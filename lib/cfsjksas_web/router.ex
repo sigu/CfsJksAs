@@ -33,6 +33,7 @@ defmodule CfsjksasWeb.Router do
     live "/idlist", AnalysisLive.IdList, :home
     live "/namelist", AnalysisLive.NameList, :home
     live "/sectorlist", AnalysisLive.SectorList, :home
+    live "/parentlinks", AnalysisLive.ParentLinks, :home
   end
 
   # Other scopes may use custom stacks.
