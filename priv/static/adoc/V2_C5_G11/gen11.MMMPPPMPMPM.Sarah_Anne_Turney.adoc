@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: ABT 1620
-
 * Birthplace: England, UK
-
 * Death: 1708
-
 * Deathplace: Stratford, Fairfield, Connecticut, USA
-
 * Age at Death: About 87-88
-
 
 
 == Ship
@@ -69,15 +63,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0887http://localhost:4000/person?p=p
 
 
 == Other
-event:  868
-<p>
-2 TYPE Reference Number
-</p>
- 883
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

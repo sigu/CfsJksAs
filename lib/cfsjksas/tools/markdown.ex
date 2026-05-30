@@ -8,14 +8,15 @@ defmodule Cfsjksas.Tools.Markdown do
 
 	def person_pages(gen) do
 
-		marked_lineages = Cfsjksas.Ancestors.AgentStores.get_marked_lineages()
+		marked_lineages = Cfsjksas.Ancestors.AgentStores.get_marked_sector_map()
 		this_gen_keys = Cfsjksas.Ancestors.AgentStores.m_ids_by_gen(gen)
 		person_page(this_gen_keys, gen, marked_lineages)
 	end
 
 	def person_page([], gen, _marked_lineages) do
 		# done
-		IO.inspect(gen, label: "finished")
+		num_done = length(Cfsjksas.Ancestors.AgentStores.m_ids_by_gen(gen))
+		IO.inspect("finished #{num_done} ancestors in gen #{gen}")
 	end
 	def person_page([this_id_l | rest_id_ls], gen, marked_lineages) do
 #IO.inspect("##########")
@@ -36,14 +37,14 @@ defmodule Cfsjksas.Tools.Markdown do
 		# valid so make page
 		person_l = marked_lineages[this_id_l]
 
-		person_a = Cfsjksas.Ancestors.AgentStores.get_person_a(person_l.id)
+		person_a = Cfsjksas.Ancestors.AgentStores.get_person_a(person_l.id_a)
 
 		this_relation = person_l.relation
 
 		filepath = Cfsjksas.Tools.Link.make_filename(this_relation, :adoc)
 		htmlpath = Cfsjksas.Tools.Link.make_filename(this_relation, :adoc_html)
 
-		check_facts(person_l.id)
+		check_facts(person_l.id_a)
 
 		adoc = "= "
 		<> make_title(person_a)
@@ -93,7 +94,7 @@ defmodule Cfsjksas.Tools.Markdown do
 	"""
 	def make_narrative(relation) do
 		# check if narritive file exists
-		filepath = Cfsjksas.Tools.Link.make_filename(relation, :md)
+		filepath = Cfsjksas.Tools.Link.make_filename(relation, :narrative)
 		{:ok, md} = case File.exists?(filepath) do
 			true ->
 				File.read(filepath)
@@ -107,7 +108,14 @@ defmodule Cfsjksas.Tools.Markdown do
 	end
 
 	def make_vitals(person_r) do
+if person_r == nil do
+	IEx.pry()
+end
 		person_p = Cfsjksas.Ancestors.GetAncestors.person(person_r.id)
+if person_p == nil do
+	IEx.pry()
+end
+
 		"\n\n"
 		<> not_nil("Sex: ", person_p.sex)
 		<> not_nil("Married Name: ", person_p.married_name)
@@ -144,7 +152,7 @@ defmodule Cfsjksas.Tools.Markdown do
 	end
 
 	def make_family(person_r, gen) do
-		person_a = Cfsjksas.Ancestors.AgentStores.get_person_a(person_r.id)
+		person_a = Cfsjksas.Ancestors.AgentStores.get_person_a(person_r.id_a)
 		mom_id = person_a.mother
 		mom_text = cond do
 			(mom_id == nil) and (Map.has_key?(person_a, :ship)) and (person_a.ship != nil) ->
@@ -181,7 +189,7 @@ defmodule Cfsjksas.Tools.Markdown do
 				# to get the child in this line, take off the last P or M in the relation
 				child_relation = List.delete_at(person_r.relation, -1)
 				# find the id_a of the child
-				child_id_a = Cfsjksas.Ancestors.AgentStores.get_person_r(child_relation).id_a
+				child_id_a = Cfsjksas.Ancestors.AgentStores.line_to_id_a(child_relation)
 				# return labeled link
 				Cfsjksas.Tools.Link.book_link(child_id_a)
 					<> "\n"
@@ -197,12 +205,15 @@ defmodule Cfsjksas.Tools.Markdown do
 		<> "\n"
 	end
 
-	def make_relations(person_r) do
-		# loop thru the sorted lineages
-		person_p = Cfsjksas.Ancestors.GetAncestors.person(person_r.id)
-		# number the lineages
-		make_relations("", person_p.relation_list, 1)
+	def make_relations(person_a) do
+		# get the lineages and loop thru them
+
+		relations = Cfsjksas.Ancestors.AgentStores.id_a_to_line(person_a.id)
+		init_text = ""
+		init_line_number = 1
+		make_relations(init_text, relations, init_line_number)
 	end
+
 	@doc """
 	make_relations(text, list_of_relation_lists, lineage_numb)
 	recurse thru the lisf of relation lists, making linkeage text for each
@@ -212,6 +223,7 @@ defmodule Cfsjksas.Tools.Markdown do
 		text
 	end
 	def make_relations(text, [this_list | rest_of_lists], lineage_numb) do
+
 		# start with previous text, add header of lineage number, and add lineage
 		text
 		<> "=== Lineage \#"
@@ -241,12 +253,11 @@ defmodule Cfsjksas.Tools.Markdown do
 		# to avoid link for final person, stip off last relation
 		# and add final person without link
 		mod_r_list = List.delete_at(relation, -1)
-		gen = length(relation)
-		person = Cfsjksas.Ancestors.GetLineages.person(gen, relation)
+		person = Cfsjksas.Ancestors.AgentStores.line_to_person_a(relation)
+
 		if person == nil do
 			IEx.pry()
 		end
-
 		make_lineage(init_text, [], mod_r_list)
 		<> "* " <> make_label(person.id) <> "\n\n"
 	end
@@ -263,9 +274,10 @@ defmodule Cfsjksas.Tools.Markdown do
 		text
 	end
 	def make_lineage(text, done, [this | rest]) do
+
 		# the relation key for "this" person is done + this
 		this_relation = done ++ [this]
-		this_id_a = Cfsjksas.Ancestors.AgentStores.get_person_r(this_relation).id_a
+		this_id_a = Cfsjksas.Ancestors.AgentStores.line_to_id_a(this_relation)
 		new_text = text <> "* " <> Cfsjksas.Tools.Link.book_link(this_id_a) <> "\n"
 		new_done = done ++ [this]
 		# recurse thru rest
@@ -398,14 +410,11 @@ defmodule Cfsjksas.Tools.Markdown do
 	end
 
 	def linify(text) do
-		[h | t] = String.split(text, "\n", parts: 2)
-		h
-		<> case t do
-			[] ->
-				"\n"
-			_ ->
-				"\n<p>\n" <> List.first(t) <> "\n</p>\n"
-		end
+		text
+		|> String.replace("\r\n2 ", "\n\n* ")
+		|> String.replace("\n2 ", "\n\n* ")
+		|> String.replace("\r\n3 ", "\n\n* ")
+		|> String.replace("\n3 ", "\n\n* ")
 	end
 
 	@doc """
@@ -450,7 +459,7 @@ defmodule Cfsjksas.Tools.Markdown do
 		## if lineage.duplicate is :redundant
 		## if lineage.duplicate is :branch
 		cond do
-			is_binary(marked_lineages[id_l].id) -> true
+			is_binary(marked_lineages[id_l].id_a) -> true
 				# string not atom (eg "father of ...") so skip
 #IO.inspect("skipping since id is string")
 				:skip

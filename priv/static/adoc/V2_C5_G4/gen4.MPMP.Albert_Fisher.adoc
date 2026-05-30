@@ -1,0 +1,62 @@
+= Albert Fisher (1812 - 1887)= Albert Fisher
+
+Born on June 27, 1812 in Bolton, Massachusetts. Died on June 8, 1887 in Dedham, Massachusetts. Son of link:https://github.com/sparrell/CfsJksAs/blob/main/priv/static/adoc/V2_C5_G5/gen5.MPMPP.Jacob_Fisher.adoc[Jacob Fisher] and link:https://github.com/sparrell/CfsJksAs/blob/main/priv/static/adoc/V2_C5_G5/gen5.MPMPM.Ann_Pierce.adoc[Ann Pierce]. Married to link:https://github.com/sparrell/CfsJksAs/blob/main/priv/static/adoc/V2_C5_G4/gen4.MPMM.Arvilla_Gray.adoc[Arvilla Gray] on August 31, 1834. Listed as father to link:https://github.com/sparrell/CfsJksAs/blob/main/priv/static/adoc/V2_C5_G3/gen3.MPM.Frances_A_Fisher.adoc[Frances Fisher] and link:https://github.com/sparrell/CfsJksAs/blob/main/priv/static/adoc/V2_C5_G2/gen2.MP.Albert_Amory_Fisk_Fisher.adoc[Albert AF Fisher].
+
+Recent genealogy calls into question whether or not Albert AF Fisher was Albert Fisher's son or his grandson. For more information, visit link:https://github.com/sparrell/CfsJksAs/blob/main/priv/static/adoc/V2_C5_G2/gen2.MP.Albert_Amory_Fisk_Fisher.adoc[Albert AF Fisher].
+
+== Vital Stats
+
+
+* Sex: M
+* Birth: 27 JUN 1812
+* Birthplace: Bolton, Worcester, Massachusetts, USA
+* Death: 8 JUN 1887
+* Deathplace: Dedham, Norfolk, Massachusetts, USA
+* Buried: 
+
+* DATE 10 JUN 1887
+
+* PLAC Groveland Cemetery, Dedham, Norfolk, Massachusetts, USA
+* Age at Death: 74
+
+
+== Family
+* Mother: https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G5/gen5.MPMPM.Ann_Pierce.adoc[Ann Pierce (? - ?)]
+
+* Father: https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G5/gen5.MPMPP.Jacob_Fisher.adoc[Jacob Fisher (1776 - 1820)]
+
+* Child*: https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G3/gen3.MPM.Frances_A_Fisher.adoc[Frances A Fisher (1835 - ?)]
+
+
+== Reference Links
+* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G4/gen4.MPMP.Albert_Fisher.adoc[Book Link]
+https://cfsjksas.gigalixirapp.com/person?p=p0188http://localhost:4000/person?p=p0188https://cfsjksas.gigalixirapp.com/adoc?p=p0188http://localhost:4000/adoc?p=p0188* https://www.geni.com/people/Albert-Fisher/6000000219179990038[Geni]
+* https://www.myheritage.com/profile-OYYV6NML2DHJUFEXHD45V4W32Y6KPTI-23000422/albert-fisher[MyHeritage]
+* https://www.werelate.org/wiki/Person:Albert_Fisher_%2812%29[WeRelate]
+* WikiTree TBD
+
+== Relations
+=== Lineage #1
+* https://github.com/spoarrell/cfs_ancestors/tree/main/Vol_02_Ships/V2_C1_Principals/0_intro_principals.adoc[Charles, James, Ann Sparrell]
+* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G1/gen1.M.Marion_F_Fisher.adoc[Marion F Fisher (1904 - 2002)]
+* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G2/gen2.MP.Albert_Amory_Fisk_Fisher.adoc[Albert Amory Fisk Fisher (1854 - 1915)]
+* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G3/gen3.MPM.Frances_A_Fisher.adoc[Frances A Fisher (1835 - ?)]
+* gen4.MPMP.Albert_Fisher_(1812 - 1887)
+
+
+== Other
+census: 
+
+* DATE 1880
+
+* PLAC Dedham, Norfolk, Massachusetts, USA
+
+* AGE 67-68
+event:  See Notes
+
+* TYPE Misc
+notes: 1854 Birth record of Albert A. F. Fisher lists father's occupation as Engineer and residence as Cohasset MA. 1880 Federal Census Lists Albert(69) as a farmer in Dedham MA. Living at the same location is his wife Arvilla (70), his son Albert F.(25) , his Daughter-in-law, Anna W.(24) and a granddaughter Adelle(2). Buried Groveland Cemetary, Dedham, MA
+occupation: Farmer
+
+== Sources
+

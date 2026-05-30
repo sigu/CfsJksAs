@@ -7,15 +7,10 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 16 DEC 1681
-
 * Death: 23 APR 1755
-
 * Deathplace: Woodbury, Litchfield, Connecticut, USA
-
 * Age at Death: 73
-
 
 
 == Family
@@ -46,15 +41,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0646http://localhost:4000/person?p=p
 
 
 == Other
-event:  646
-<p>
-2 TYPE Reference Number
-</p>
- 646
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

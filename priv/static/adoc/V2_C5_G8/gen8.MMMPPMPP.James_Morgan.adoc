@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 1693
-
 * Birthplace: Groton, New London, Connecticut, USA
-
 * Death: 25 AUG 1770
-
 * Deathplace: Groton, New London, Connecticut, USA
-
 * Age at Death: 76-77
-
 
 
 == Family
@@ -51,17 +45,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0390http://localhost:4000/person?p=p
 * https://github.com/spoarrell/cfs_ancestors/tree/main/Vol_02_Ships/V2_C1_Principals/0_intro_principals.adoc[Charles, James, Ann Sparrell]
 * https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G1/gen1.P.Herbert_Kirkwood_Sparrell.adoc[Herbert Kirkwood Sparrell (1899 - 1978)]
 * https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G2/gen2.PM.Lavinia_Elizabeth_Strong.adoc[Lavinia Elizabeth Strong (1875 - 1941)]
-* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G3/gen3.PMM.Alice_Virginia_Edgecomb.adoc[Alice Virginia Edgecomb (1850 - 1914)]
-* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G4/gen4.MMMP.George_Washington_Edgecomb.adoc[George Washington Edgecomb (1826 - 1862)]
-* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G5/gen5.MMMPP.Jabez_M_Edgecomb.adoc[Jabez M. Edgecomb (1791 - 1865)]
-* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G6/gen6.MMMPPM.Esther_Morgan.adoc[Esther Morgan (1763 - 1843)]
-* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G7/gen7.MMMPPMP.Joshua_Morgan.adoc[Joshua Morgan (1733 - 1774)]
-* gen8.MMMPPMPP.James_Morgan_(1693 - 1770)
-
-=== Lineage #3
-* https://github.com/spoarrell/cfs_ancestors/tree/main/Vol_02_Ships/V2_C1_Principals/0_intro_principals.adoc[Charles, James, Ann Sparrell]
-* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G1/gen1.P.Herbert_Kirkwood_Sparrell.adoc[Herbert Kirkwood Sparrell (1899 - 1978)]
-* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G2/gen2.PM.Lavinia_Elizabeth_Strong.adoc[Lavinia Elizabeth Strong (1875 - 1941)]
 * https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G3/gen3.PMP.Albert_Randolph_Strong.adoc[Albert Randolph Strong (1845 - 1920)]
 * https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G4/gen4.PMPM.Elizabeth_Shaw_Whaley.adoc[Elizabeth Shaw Whaley (1813 - 1870)]
 * https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G5/gen5.PMPMP.William_Patten_Whaley.adoc[William Patten Whaley (1786 - ?)]
@@ -69,22 +52,34 @@ https://cfsjksas.gigalixirapp.com/person?p=p0390http://localhost:4000/person?p=p
 * https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G7/gen7.PMPMPMM.Mary_Morgan.adoc[Mary Morgan (1731 - ?)]
 * gen8.MMMPPMPP.James_Morgan_(1693 - 1770)
 
+=== Lineage #3
+* https://github.com/spoarrell/cfs_ancestors/tree/main/Vol_02_Ships/V2_C1_Principals/0_intro_principals.adoc[Charles, James, Ann Sparrell]
+* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G1/gen1.P.Herbert_Kirkwood_Sparrell.adoc[Herbert Kirkwood Sparrell (1899 - 1978)]
+* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G2/gen2.PM.Lavinia_Elizabeth_Strong.adoc[Lavinia Elizabeth Strong (1875 - 1941)]
+* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G3/gen3.PMM.Alice_Virginia_Edgecomb.adoc[Alice Virginia Edgecomb (1850 - 1914)]
+* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G4/gen4.MMMP.George_Washington_Edgecomb.adoc[George Washington Edgecomb (1826 - 1862)]
+* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G5/gen5.MMMPP.Jabez_M_Edgecomb.adoc[Jabez M. Edgecomb (1791 - 1865)]
+* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G6/gen6.MMMPPM.Esther_Morgan.adoc[Esther Morgan (1763 - 1843)]
+* https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G7/gen7.MMMPPMP.Joshua_Morgan.adoc[Joshua Morgan (1733 - 1774)]
+* gen8.MMMPPMPP.James_Morgan_(1693 - 1770)
+
 
 == Other
 event:  Justice of the Peace for New London County
-<p>
-2 TYPE Appointd
-2 DATE 1735
-2 AGE 41-42
-</p>
- _ELEC of Morgan, James - Representative in Assembly for Groton
-<p>
-2 TYPE _ELEC
-2 DATE 1726
-2 PLAC Groton, Middlesex, Massachusetts, USA
-2 AGE 32-33
-</p>
 
+* TYPE Appointd
+
+* DATE 1735
+
+* AGE 41-42 _ELEC of Morgan, James - Representative in Assembly for Groton
+
+* TYPE _ELEC
+
+* DATE 1726
+
+* PLAC Groton, Middlesex, Massachusetts, USA
+
+* AGE 32-33
 
 == Sources
 

@@ -1,6 +1,7 @@
 defmodule Cfsjksas.Tools.Relation do
   @moduledoc """
-  make_lineages() - create base lineages map from ancestor(file) map
+  make_marked_sectors() - make marked sector map from ancestor data
+  rm? make_lineages() - create base lineages map from ancestor(file) map
   sector_from_relation(relation) - give generation and sector for a given relation
   make_sector_lineages(base_lineage) - have {gen, sector} as primary key
   add_terminations_lineage(which_lineage) - add gen/sectors to each lineage along with terminations classified
@@ -22,6 +23,109 @@ defmodule Cfsjksas.Tools.Relation do
 
   """
   require IEx
+
+
+  #################### new section below #####################
+  # easier to hard code this than programatically
+
+  @doc """
+  make marked sector map from ancestor data
+  """
+  def make_marked_sectors() do
+
+    # initialize marked for first several generations
+    marked = Cfsjksas.Tools.MarkedHelpers.init_marked()
+
+    # inialize the ancestors already marked main from initialization
+    mains = [
+      marked[{0, :ne, 0}].id_a,
+      marked[{1, :ne, 0}].id_a,
+      marked[{1, :se, 1}].id_a,
+    ]
+
+    # get all lines and sort in an order helping duplicate finding
+    sorted_lines = Cfsjksas.Ancestors.AgentStores.line_to_id_a()
+    |> Map.keys()
+    |> Enum.sort_by(fn line -> Cfsjksas.Tools.LineSort.sort_key(line) end)
+    # remove those initialized from sorted_lines
+    |> Cfsjksas.Tools.MarkedHelpers.init_sorted()
+
+    # walk thru lines, adding mains or dedupping
+    make_marked_sectors(marked, sorted_lines, mains)
+  end
+
+  # make_marked_sectors(marked, sorted_lines, mains)
+  defp make_marked_sectors(marked, [], _mains) do
+    # no lines left so done
+    marked
+  end
+  defp make_marked_sectors(marked, [line | rest_sorted_lines], mains) do
+    # derive id_s components
+    gen = length(line)
+    quadrant = Cfsjksas.Tools.MarkedHelpers.get_quadrant(line)
+    sector = Cfsjksas.Tools.MarkedHelpers.sector_from_line(line)
+    id_s = {gen, quadrant, sector}
+
+    # find the id_a for line
+    id_a = Cfsjksas.Ancestors.AgentStores.line_to_id_a(line)
+    # if id_a in mains, and line still in sorted_line (ie had not been removed as duplicate) then this is a branch
+    duplicate = case id_a in mains do
+      false ->
+        :main
+      true ->
+        :branch
+    end
+    new_mains = case duplicate do
+      :main ->
+        mains ++ [id_a]
+      :branch ->
+        mains
+    end
+    person_a = Cfsjksas.Ancestors.AgentStores.get_person_a(id_a)
+
+    # immigrant =
+    ## :no if no ship key
+    ## :ship if has ship key and name != nil
+    ## :no_ship if has ship key and name == nil
+    immigrant = cond do
+      not Map.has_key?(person_a, :ship) ->
+        :no
+      person_a.ship.name == nil ->
+        :no_ship
+      person_a.ship.name != nil ->
+        :ship
+    end
+
+    brickwall = Cfsjksas.Tools.MarkedHelpers.is_brickwall(person_a)
+
+    # mark researched if brickwall and researched? set
+    researched? = brickwall and Map.has_key?(person_a, :researched?) and person_a.researched?
+
+    # add person's new fields
+    marked_with_add = marked
+    |> put_in([id_s, :duplicate], duplicate)
+    |> put_in([id_s, :immigrant], immigrant)
+    |> put_in([id_s, :brickwall], brickwall)
+    |> put_in([id_s, :researched?], researched?)
+
+    # if branch, mark ancestors and removed from rest_sorted_lines
+    {marked_rm_branch, sorted_lines_rm_branch} = case duplicate do
+      :main ->
+        # no need to process ancestors
+        {marked_with_add, rest_sorted_lines}
+      :branch ->
+        # temp variable to pass on father, mother
+        father = line ++ [:p]
+        mother = line ++ [:m]
+        Cfsjksas.Tools.MarkedHelpers.process_ancestors(marked_with_add, rest_sorted_lines, [father, mother])
+    end
+
+    # recurse on
+    make_marked_sectors(marked_rm_branch, sorted_lines_rm_branch, new_mains)
+  end
+
+
+  #################### new section above #####################
 
   def make_lineages() do
     IO.inspect("remember to remove dedup once complete")
@@ -99,10 +203,10 @@ defmodule Cfsjksas.Tools.Relation do
   end
   defp sector_from_relation(accumulator, [this | rest_relation]) do
     case this do
-      "P" ->
+      :p ->
         # P = zero so recurse on
         sector_from_relation(accumulator, rest_relation)
-      "M" ->
+      :m ->
         # M = binary 1 so add in
         new_acc = accumulator + (2 ** length(rest_relation))
         # recurse on
@@ -117,22 +221,22 @@ defmodule Cfsjksas.Tools.Relation do
   def get_guadrant([]) do
     :ne
   end
-  def get_guadrant(["P"]) do
+  def get_guadrant([:p]) do
     :ne
   end
-  def get_guadrant(["M"]) do
+  def get_guadrant([:m]) do
     :se
   end
-  def get_guadrant(["P", "P" | _rest]) do
+  def get_guadrant([:p, :p | _rest]) do
     :ne
   end
-  def get_guadrant(["P", "M" | _rest]) do
+  def get_guadrant([:p, :m | _rest]) do
     :nw
   end
-  def get_guadrant(["M", "P" | _rest]) do
+  def get_guadrant([:m, :p | _rest]) do
     :sw
   end
-  def get_guadrant(["M", "M" | _rest]) do
+  def get_guadrant([:m, :m | _rest]) do
     :se
   end
 
@@ -345,7 +449,7 @@ defmodule Cfsjksas.Tools.Relation do
         # already a brickwall, leave unchanged
         lineages
       unknown(person_a.surname) ->
-        # if don't know surname, mark person as brickwall
+        # if don't know surname, or already researched as bw, mark person as brickwall
         put_in(lineages, [id_l, :brickwall], true)
       ship ->
         # has ship so not brickwall regardless of parents
@@ -379,7 +483,7 @@ defmodule Cfsjksas.Tools.Relation do
     # quadrant unchanged
     # sector for father = 2 * sector
     # sector for mother = (2 * sector) + 1
-    # relation for partent is relation ++ ["P"] or ["M"] depending
+    # relation for partent is relation ++ [:p] or [:m] depending
     # make id from "father of" child or "mother of" child
 
     {child_gen, child_sector} = person_l.sector
@@ -387,12 +491,12 @@ defmodule Cfsjksas.Tools.Relation do
 
     # parent is one generation out from child
     parent_gen = child_gen + 1
-    # relation = relation ++ (["P"] for ["M"]
+    # relation = relation ++ ([:p] for [:m]
     parent_relation = case parent do
       :father ->
-        person_l.relation ++ ["P"]
+        person_l.relation ++ [:p]
       :mother ->
-        person_l.relation ++ ["M"]
+        person_l.relation ++ [:m]
     end
     # quad remains unchanged
     parent_quad = child_quad
@@ -439,20 +543,24 @@ defmodule Cfsjksas.Tools.Relation do
   check ship status of a person
   """
   def ship_status(person) do
+IEx.pry() # rm.  remove whole function if never called and remove what calls it
     cond do
       not Map.has_key?(person, :ship) ->
         :no
 
-      is_nil(person[:ship]) ->
+      is_nil(person.ship) ->
         :no_ship
 
-      not is_map(person[:ship]) or not Map.has_key?(person[:ship], :name) ->
+      person.ship == :parent ->
+        :parent
+
+      not is_map(person.ship) or not Map.has_key?(person.ship, :name) ->
         :no_ship
 
-      is_nil(person[:ship][:name]) ->
+      is_nil(person.ship.name) ->
         :no_ship
 
-      String.trim(to_string(person[:ship][:name])) == "" ->
+      String.trim(to_string(person.ship.name)) == "" ->
         :no_ship
 
       true ->
@@ -520,17 +628,7 @@ defmodule Cfsjksas.Tools.Relation do
     end
   end
 
-#  # add brickwall is surname is unknown
-#  defp find_unknowns(marked_lineages, true, {gen, quadrant, sector}) do
-#    # surname is unknown
-#    put_in(marked_lineages, [{gen, quadrant, sector}, :brickwall], true)
-#  end
-#  defp find_unknowns(marked_lineages, false, {_gen, _quadrant, _sector}) do
-#    # surname is unknown
-#    marked_lineages
-#  end
-
-  # return true if surname blank or unknow, false otherwise
+  # return true if surname blank or unknow or bw=researched brickwall, false otherwise
   def unknown(surname) do
     cond do
       is_nil(surname) ->
@@ -542,7 +640,9 @@ defmodule Cfsjksas.Tools.Relation do
         String.starts_with?(surname, "Unknow")
       ) ->
         true
-      true ->
+      is_binary(surname) and String.ends_with?(surname, "-*") ->
+        true
+      is_binary(surname) ->
         false
     end
   end
@@ -623,13 +723,13 @@ defmodule Cfsjksas.Tools.Relation do
     relations = Cfsjksas.Ancestors.GetLineages.all_relations()
 
     # bootstap the 'already' list
-		id_list = [relations[0][0].id, relations[1][["P"]].id, relations[1][["M"]].id]
+		id_list = [relations[0][0].id, relations[1][[:p]].id, relations[1][[:m]].id]
 
     # edit relations by adding termination for g0,1
     new_relations = relations
     |> put_in([0, 0, :termination], :not)
-    |> put_in([1,["P"], :termination], :not)
-    |> put_in([1,["M"], :termination], :not)
+    |> put_in([1,[:p], :termination], :not)
+    |> put_in([1,[:m], :termination], :not)
 
     dedup({new_relations, id_list}, Enum.to_list(2..14))
   end
@@ -669,11 +769,23 @@ defmodule Cfsjksas.Tools.Relation do
     # add category termination
     # return tuple of {new relations, gen, new id_list}
     person_id = relations[gen][this].id
-    if person_id == nil do
-      IEx.pry()
+    category = case person_id do
+      nil ->
+        raise "nil person_id"
+      :bw ->
+        :bw
+      _ ->
+        Cfsjksas.Ancestors.Person.categorize_person(person_id)
     end
-    category = Cfsjksas.Ancestors.Person.categorize_person(person_id)
-    { put_in(relations, [gen, this, :termination], category),
+
+######
+#
+#    if person_id == nil do
+#      IEx.pry()
+#    end
+#   category = Cfsjksas.Ancestors.Person.categorize_person(person_id)
+
+{ put_in(relations, [gen, this, :termination], category),
       gen,
       [relations[gen][this].id | id_list]
     }
@@ -727,29 +839,6 @@ defmodule Cfsjksas.Tools.Relation do
     end
     # recurse on to rest of list using modified relations
     |> rm_dups(gen, root_dup, rest)
-  end
-
-  def find_a_id_from_relation(relation) do
-    # brute force search ancestors
-    a_ids = Cfsjksas.Ancestors.GetAncestors.all_ids()
-    # loop thru id's looking for match
-    find_a_id_from_relation(relation, a_ids)
-  end
-  def find_a_id_from_relation(relation, []) do
-    # didn't find, something wrong
-    IEx.pry()
-  end
-  def find_a_id_from_relation(relation, [a_id | rest_ids]) do
-    person = Cfsjksas.Ancestors.GetAncestors.person(a_id)
-    hit = relation in person.relation_list
-    case hit do
-      true ->
-        # found match, return a_id
-        a_id
-      false ->
-        # no match, recurse thru rest
-        find_a_id_from_relation(relation, rest_ids)
-    end
   end
 
 

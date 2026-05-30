@@ -7,13 +7,9 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birthplace: England, UK
-
 * Death: 20 JAN 1660
-
 * Deathplace: Boston, Suffolk, Massachusetts, USA
-
 
 
 == Ship
@@ -53,15 +49,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0652http://localhost:4000/person?p=p
 
 
 == Other
-event:  651
-<p>
-2 TYPE Reference Number
-</p>
- 651
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

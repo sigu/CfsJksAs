@@ -7,13 +7,9 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: 1 APR 1670
-
 * Birthplace: Boston, Suffolk, Massachusetts, USA
-
 * Deathplace: Scituate, Plymouth, Massachusetts, USA
-
 
 
 == Family
@@ -45,11 +41,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0606http://localhost:4000/person?p=p
 
 
 == Other
-event:  61
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

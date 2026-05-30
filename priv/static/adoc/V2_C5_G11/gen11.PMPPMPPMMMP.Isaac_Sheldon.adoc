@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: AFT 1629
-
 * Birthplace: Bakewell, Derbyshire, England, UK
-
 * Death: 27 JUL 1708
-
 * Deathplace: Northampton, Hampshire, Massachusetts, USA
-
 * Age at Death: About 78-79
-
 
 
 == Ship
@@ -57,15 +51,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0640http://localhost:4000/person?p=p
 
 
 == Other
-event:  640
-<p>
-2 TYPE Reference Number
-</p>
- 640
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

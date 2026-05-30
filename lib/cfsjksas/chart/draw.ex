@@ -52,7 +52,7 @@ defmodule Cfsjksas.Chart.Draw do
   def draw_person(svg, gen, cfg, lineage, [id_l | rest_keys], chart_type) do
     # determine if this is duplicate to be skipped
     person_l = lineage[id_l]
-    id_a = person_l.id
+    id_a = person_l.id_a
     person_a = Cfsjksas.Ancestors.AgentStores.get_person_a(id_a)
 
     svg
@@ -63,8 +63,11 @@ defmodule Cfsjksas.Chart.Draw do
   end
 
   defp touchup(svg) do
+    IO.inspect("add_g11_lines, remove touchup")
+# rm    touchup_list = Cfsjksas.Chart.GetCircleMod.touchup_list()
+
     # add lines for the adjusted gen 12, 13, 14
-    touchup_list = Cfsjksas.Chart.GetCircleMod.touchup_list()
+    touchup_list = Cfsjksas.Chart.GetCircleMod.g11_plus_rays()
     svg
     |> touchup(touchup_list)
   end

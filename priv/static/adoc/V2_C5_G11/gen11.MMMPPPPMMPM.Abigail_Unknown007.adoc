@@ -7,13 +7,9 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birthplace: England, UK
-
 * Death: 1686
-
 * Deathplace: Town of Lyme, Connecticut, USA
-
 
 
 == Ship
@@ -65,15 +61,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0935http://localhost:4000/person?p=p
 
 
 == Other
-event:  910
-<p>
-2 TYPE Reference Number
-</p>
- 925
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

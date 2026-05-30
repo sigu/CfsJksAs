@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 1599
-
 * Birthplace: Hook Norton, Oxfordshire, England, UK
-
 * Death: 1644
-
 * Deathplace: Plymouth, Plymouth, Massachusetts, USA
-
 * Age at Death: 44-45
-
 
 
 == Ship
@@ -55,15 +49,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0861http://localhost:4000/person?p=p
 
 
 == Other
-event:  844
-<p>
-2 TYPE Reference Number
-</p>
- 859
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 27 SEP 1668
-
 * Birthplace: New London, New London, Connecticut, USA
-
 * Death: 31 JAN 1712
-
 * Deathplace: Groton, New London, Connecticut, USA
-
 * Age at Death: 43
-
 
 
 == Family
@@ -50,15 +44,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0382http://localhost:4000/person?p=p
 
 
 == Other
-event:  405
-<p>
-2 TYPE Reference Number
-</p>
- 405
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

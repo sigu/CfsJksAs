@@ -7,19 +7,14 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: AFT 1703
-
 * Birthplace: Preston, New London, Connecticut, USA
-
 * Death: ABT 1750
-
 * Age at Death: About 46-47
 
 
-
 == Family
-* Mother: https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G10/gen10.MMMMPMPMMM.Elizabeth_Freeman.adoc[Elizabeth Freeman (? - ?)]
+* Mother: https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G10/gen10.MMMMPMPMMM.Elizabeth_Freeman.adoc[Elizabeth Freeman (1648 - 1723)]
 
 * Father: https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G10/gen10.MMMMPMPMMP.Thomas_Gates.adoc[Thomas Gates (1646 - 1726)]
 

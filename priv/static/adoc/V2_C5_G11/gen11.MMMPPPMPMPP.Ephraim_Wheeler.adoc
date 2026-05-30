@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 16 MAR 1619
-
 * Birthplace: Cranfield, Bedfordshire, England, UK
-
 * Death: 1 NOV 1670
-
 * Deathplace: Stratford, Fairfield, Connecticut, USA
-
 * Age at Death: 51
-
 
 
 == Ship
@@ -69,15 +63,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0886http://localhost:4000/person?p=p
 
 
 == Other
-event:  867
-<p>
-2 TYPE Reference Number
-</p>
- 882
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

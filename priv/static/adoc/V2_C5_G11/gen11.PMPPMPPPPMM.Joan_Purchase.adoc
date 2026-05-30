@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: 25 MAR 1578
-
 * Birthplace: Dorchester, England, UK
-
 * Death: 26 MAR 1653
-
 * Deathplace: Dorchester, Boston, Massachusetts, USA
-
 * Age at Death: 75
-
 
 
 == Ship
@@ -55,15 +49,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0019http://localhost:4000/person?p=p
 
 
 == Other
-event:  1012
-<p>
-2 TYPE Reference Number
-</p>
- 1038
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

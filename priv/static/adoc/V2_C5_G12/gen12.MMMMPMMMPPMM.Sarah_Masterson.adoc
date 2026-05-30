@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: 1622
-
 * Birthplace: Leiden, South Holland, Netherlands
-
 * Death: 1701
-
 * Deathplace: Plymouth, Plymouth, Massachusetts, USA
-
 * Age at Death: 78-79
-
 
 
 == Family
@@ -68,15 +62,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0484http://localhost:4000/person?p=p
 
 
 == Other
-event:  498
-<p>
-2 TYPE Reference Number
-</p>
- 498
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

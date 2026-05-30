@@ -123,6 +123,7 @@ defmodule Cfsjksas.Ancestors.Person do
     Enum.map(normal, fn x -> {x, x |> Cfsjksas.Ancestors.AgentStores.get_person_a() |> get_name()} end)
   end
 
+  @spec brick_walls() :: [{list(), any(), nonempty_binary(), any(), any(), any()}]
   def brick_walls() do
     # classify everyone as one of:
     ##   * not line termination
@@ -138,33 +139,38 @@ defmodule Cfsjksas.Ancestors.Person do
   end
   defp brick_walls([id | rest], terminations) do
     person = Cfsjksas.Ancestors.AgentStores.get_person_a(id)
+    lines = Cfsjksas.Ancestors.AgentStores.id_a_to_line(id)
     termination = case categorize_person(id) do
-      :not -> []
-      :ship -> []
-      :no_ship -> []
+      :not -> []      # intermediate person ie not a brickwall
+      :ship -> []     # immigrant  ie not a brickwall
+      :no_ship -> []  # immigrant  ie not a brickwall
+      :parent -> []   # parent of immigrant  ie not a brickwall
       :brickwall_both ->
         # add data to list
-        [{Enum.map(person.relation_list, &length/1),
+        [{Enum.map(lines, &length/1),
 			    id,
 			    get_name(person),
+          Cfsjksas.Tools.Person.researched?(person),
 			    Cfsjksas.Tools.Person.get_birth_place(person),
-			    Cfsjksas.Tools.Person.get_death_place(person)
+			    Cfsjksas.Tools.Person.get_death_place(person),
 			  }]
       :brickwall_mother ->
         # add data to list
-        [{Enum.map(person.relation_list, &length/1),
+        [{Enum.map(lines, &length/1),
 			    id,
 			    get_name(person),
+          Cfsjksas.Tools.Person.researched?(person),
 			    Cfsjksas.Tools.Person.get_birth_place(person),
-			    Cfsjksas.Tools.Person.get_death_place(person)
+			    Cfsjksas.Tools.Person.get_death_place(person),
 			  }]
       :brickwall_father ->
         # add data to list
-        [{Enum.map(person.relation_list, &length/1),
+        [{Enum.map(lines, &length/1),
 			    id,
 			    get_name(person),
+          Cfsjksas.Tools.Person.researched?(person),
 			    Cfsjksas.Tools.Person.get_birth_place(person),
-			    Cfsjksas.Tools.Person.get_death_place(person)
+			    Cfsjksas.Tools.Person.get_death_place(person),
 			  }]
     end
 
@@ -232,6 +238,16 @@ defmodule Cfsjksas.Ancestors.Person do
         parents,
         normal
         }
+      :parent ->
+        {has_ships,
+        wo_ships,
+        brickwalls_both,
+        brickwalls_mother,
+        brickwalls_father,
+        [id | parents],
+        normal
+        }
+
       :not ->
         {has_ships,
         wo_ships,
@@ -259,7 +275,7 @@ defmodule Cfsjksas.Ancestors.Person do
       IEx.pry()
     end
     person = Cfsjksas.Ancestors.AgentStores.get_person_a(id)
-if person == nil do
+    if person == nil do
       IEx.pry()
     end
     mother = person.mother
@@ -299,7 +315,7 @@ if person == nil do
   end
 
   defp ship_info(:parent) do
-    :not
+    :parent
   end
   defp ship_info(:parent_wo_ship) do
     :not
@@ -324,10 +340,17 @@ if person == nil do
   end
   defp surnames([], surname_map) do
     # list empty so done
+
+    # determine how many people with unknown surname
+    unknowns = length(surname_map["Unknown"])
+
     # turn surname_map into sorted list of lists
-    surname_map
+    surname_list = surname_map
     |> Map.to_list()
     |> Enum.sort()
+
+    # return sorted list of surnames and number of people with unknown surname
+    {surname_list, unknowns}
   end
   defp surnames([id | rest], surname_map) do
     # get surname of this person
@@ -443,8 +466,7 @@ IEx.pry()
     sectors
   end
   def mark_sectors(sectors, [id_a | rest_id_a], termination) do
-    person_a = Cfsjksas.Ancestors.AgentStores.get_person_a(id_a)
-    relations = person_a.relation_list
+    relations = Cfsjksas.Ancestors.AgentStores.id_a_to_line(id_a)
 
     sectors
     |> mark_sectors(id_a, rest_id_a, termination, relations)
@@ -455,8 +477,8 @@ IEx.pry()
     |> mark_sectors(rest_id_a, termination)
   end
   def mark_sectors(sectors, id_a, rest_id_a, termination, [id_r | rest_relations]) do
-    person_r = Cfsjksas.Ancestors.AgentStores.get_person_r(id_r)
-    {orig_gen, _quadrant, orig_sector} = person_r.id_m
+    id_s = Cfsjksas.Ancestors.AgentStores.id_r_to_id_s(id_r)
+    {orig_gen, _quadrant, orig_sector} = id_s
     {gen, sector, value} = case termination do
       :brickwall_both ->
         {orig_gen, orig_sector, :brickwall}

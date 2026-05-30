@@ -7,13 +7,9 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: ABT 1674
-
 * Birthplace: Ipswich, Essex, Massachusetts, USA
-
 * Deathplace: Plainfield, Windham, Connecticut, USA
-
 
 
 == Family
@@ -60,15 +56,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0449http://localhost:4000/person?p=p
 
 
 == Other
-event:  466
-<p>
-2 TYPE Reference Number
-</p>
- 466
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

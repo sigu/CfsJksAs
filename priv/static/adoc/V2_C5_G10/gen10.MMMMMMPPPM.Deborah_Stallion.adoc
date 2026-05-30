@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: ABT 1648
-
 * Birthplace: Boston, Suffolk, Massachusetts, USA
-
 * Death: 27 MAR 1729
-
 * Deathplace: Groton, New London, Connecticut, USA
-
 * Age at Death: About 80-81
-
 
 
 == Family
@@ -25,7 +19,7 @@ Narrative TBD
 
 * Father: https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G10/gen10.MMMPPPPPMP.Edward_Stallion.adoc[Edward Stallion (1623 - 1703)]
 
-* Child*: https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G9/gen9.MMMMMPPMM.Deborah_Avery.adoc[Deborah Avery (1670 - 1739)]
+* Child*: https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G9/gen9.MMMMMMPPP.Edward_Avery.adoc[Edward Avery (1676 - 1709)]
 
 
 == Reference Links
@@ -90,15 +84,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0265http://localhost:4000/person?p=p
 
 
 == Other
-event:  282
-<p>
-2 TYPE Reference Number
-</p>
- 282
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

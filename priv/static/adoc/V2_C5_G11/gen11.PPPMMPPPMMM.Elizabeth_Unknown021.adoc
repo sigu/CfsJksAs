@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: ABT 1606
-
 * Birthplace: England, UK
-
 * Death: ABT 1679
-
 * Deathplace: Topsfield, Essex, Massachusetts, USA
-
 * Age at Death: About 72-73
-
 
 
 == Ship
@@ -55,15 +49,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0327http://localhost:4000/person?p=p
 
 
 == Other
-event:  338
-<p>
-2 TYPE Reference Number
-</p>
- 338
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

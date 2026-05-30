@@ -7,9 +7,7 @@ Narrative TBD
 
 
 * Sex: F
-
 * Death: 1 OCT 1659
-
 
 
 == Family
@@ -41,15 +39,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0312http://localhost:4000/person?p=p
 
 
 == Other
-event:  324
-<p>
-2 TYPE Reference Number
-</p>
- 324
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

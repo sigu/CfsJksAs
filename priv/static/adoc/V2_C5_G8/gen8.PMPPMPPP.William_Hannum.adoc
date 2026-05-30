@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 9 MAY 1690
-
 * Birthplace: Northampton, Hampshire, Massachusetts, USA
-
 * Death: 29 DEC 1755
-
 * Deathplace: Belchertown, Hampshire, Massachusetts, USA
-
 * Age at Death: 65
-
 
 
 == Family
@@ -49,15 +43,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0607http://localhost:4000/person?p=p
 
 
 == Other
-event:  610
-<p>
-2 TYPE Reference Number
-</p>
- 610
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

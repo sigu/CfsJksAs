@@ -1,4 +1,5 @@
 defmodule CfsjksasWeb.CircleLive.StatsView do
+      require IEx
   use CfsjksasWeb, :live_view
 
   @impl true
@@ -11,7 +12,7 @@ defmodule CfsjksasWeb.CircleLive.StatsView do
       } = Cfsjksas.Ancestors.Person.categorize()
 
     quantity_total_people = length(Cfsjksas.Ancestors.AgentStores.all_a_ids())
-    quantity_total_ancestors = length(Cfsjksas.Ancestors.AgentStores.all_r_ids())
+    quantity_total_ancestors = Cfsjksas.Ancestors.AgentStores.all_lines() |> length()
 
     quanity_has_ships = length(has_ships)
     quanity_wo_ships = length(wo_ships)
@@ -22,11 +23,14 @@ defmodule CfsjksasWeb.CircleLive.StatsView do
     quanity_normal = length(normal)
 
     # get the list of ids surnames
-    surnames = Cfsjksas.Ancestors.Person.surnames()
+    {surnames, quanity_unknown_surnames} = Cfsjksas.Ancestors.Person.surnames()
     quanity_surnames = length(surnames)
 
     # get list of ancestors per generation
-    gen_num = for gen <- 1..15, do: {gen, length(Cfsjksas.Ancestors.GetLineages.person_list(gen))}
+    gen_num = Cfsjksas.Ancestors.AgentStores.get_all_sector_ids()
+    |> Enum.frequencies_by(fn {gen, _x, _y} -> gen end)
+    |> Map.to_list()
+    |> Enum.sort()
 
     %{ship: ship, no_ship: no_ship, brickwall: brickwall} =
       Cfsjksas.Ancestors.Person.ring_percents()
@@ -43,6 +47,7 @@ defmodule CfsjksasWeb.CircleLive.StatsView do
      |> assign(:quanity_brickwalls, quanity_brickwalls)
      |> assign(:quanity_normal, quanity_normal)
      |> assign(:quanity_surnames, quanity_surnames)
+     |> assign(:quanity_unknown_surnames, quanity_unknown_surnames)
      |> assign(:gen_num, gen_num)
      |> assign(:ship_percent, ship_percent)
      |> assign(:no_ship_percent, no_ship_percent)

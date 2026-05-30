@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 18 APR 1648
-
 * Birthplace: Wethersfield, Hartford, Connecticut, USA
-
 * Death: BEF 1699
-
 * Deathplace: Preston, New London, Connecticut, USA
-
 * Age at Death: About 50-51
-
 
 
 == Family
@@ -64,15 +58,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0345http://localhost:4000/person?p=p
 
 
 == Other
-event:  372
-<p>
-2 TYPE Reference Number
-</p>
- 372
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

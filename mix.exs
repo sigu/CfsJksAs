@@ -4,7 +4,7 @@ defmodule Cfsjksas.MixProject do
   def project do
     [
       app: :cfsjksas,
-      version: "0.4.4",
+      version: "0.6.1",
       elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
@@ -65,6 +65,7 @@ defmodule Cfsjksas.MixProject do
       {:lazy_html, "~> 0.1.7"},
       {:easyhtml, "~> 0.4.0"},
       {:map_diff, "~> 1.3"},
+      {:ex_doc, "~> 0.30", only: :dev, runtime: false},
     ]
   end
 

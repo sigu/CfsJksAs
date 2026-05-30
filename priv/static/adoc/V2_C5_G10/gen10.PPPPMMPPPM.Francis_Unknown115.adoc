@@ -7,13 +7,9 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birthplace: Hingham, Norfolk, England, UK
-
 * Death: 28 JAN 1689
-
 * Deathplace: Hingham, Plymouth, Massachusetts, USA
-
 
 
 == Ship
@@ -50,15 +46,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0172http://localhost:4000/person?p=p
 
 
 == Other
-event:  198
-<p>
-2 TYPE Reference Number
-</p>
- 198
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

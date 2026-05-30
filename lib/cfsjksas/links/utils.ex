@@ -77,16 +77,6 @@ defmodule Cfsjksas.Links.Utils do
         "https://www.werelate.org" <> predraft_list
         end
     end
-
-#    # return parent link
-#    case parent do
-#          :father ->
-#            List.first(parent_list)
-#          :mother ->
-#            [_, second] = parent_list
-#            second
-#    end
-
   end
   def screen_scrape(:wikitree, page_to_scrape) do
     # setup scrape function

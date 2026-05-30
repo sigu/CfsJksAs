@@ -7,11 +7,8 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: 19 DEC 1776
-
 * Birthplace: New London, New London, Connecticut, USA
-
 
 
 == Family
@@ -40,15 +37,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0051http://localhost:4000/person?p=p
 
 
 == Other
-event:  109
-<p>
-2 TYPE Reference Number
-</p>
- 109
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

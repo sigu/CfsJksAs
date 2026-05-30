@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: 1595
-
 * Birthplace: Kent, England, UK
-
 * Death: 25 JUN 1658
-
 * Deathplace: Charlestown, Boston, Suffolk, Massachusetts, USA
-
 * Age at Death: 62-63
-
 
 
 == Ship
@@ -56,15 +50,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0394http://localhost:4000/person?p=p
 
 
 == Other
-event:  416
-<p>
-2 TYPE Reference Number
-</p>
- 416
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

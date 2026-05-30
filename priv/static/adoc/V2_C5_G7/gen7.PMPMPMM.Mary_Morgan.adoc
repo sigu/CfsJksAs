@@ -7,11 +7,8 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: 1731
-
 * Birthplace: Groton, New London, Connecticut, USA
-
 
 
 == Family
@@ -42,15 +39,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0088http://localhost:4000/person?p=p
 
 
 == Other
-event:  131
-<p>
-2 TYPE Reference Number
-</p>
- 131
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

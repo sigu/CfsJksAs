@@ -7,13 +7,9 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: 15 MAY 1699
-
 * Birthplace: Northampton, Hampshire, Massachusetts, USA
-
 * Deathplace: Belchertown, Hampshire, Massachusetts, USA
-
 
 
 == Family
@@ -45,15 +41,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0608http://localhost:4000/person?p=p
 
 
 == Other
-event:  611
-<p>
-2 TYPE Reference Number
-</p>
- 611
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

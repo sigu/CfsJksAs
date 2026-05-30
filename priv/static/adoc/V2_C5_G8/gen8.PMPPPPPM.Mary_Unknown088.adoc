@@ -9,7 +9,6 @@ Narrative TBD
 * Sex: F
 
 
-
 == Family
 * Mother: brickwall
 * Father: brickwall
@@ -37,15 +36,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0568http://localhost:4000/person?p=p
 
 
 == Other
-event:  575
-<p>
-2 TYPE Reference Number
-</p>
- 575
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

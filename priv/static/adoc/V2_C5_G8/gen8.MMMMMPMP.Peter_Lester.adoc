@@ -7,26 +7,18 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: ABT 1705
-
 * Birthplace: Groton, New London, Connecticut, USA
-
 * Death: 10 SEP 1789
-
 * Deathplace: Groton, New London, Connecticut, USA
-
 * Buried: 
-<p>
-2 PLAC Hurlbut Cemetery, Ledyard, New London, Connecticut, USA
-</p>
 
+* PLAC Hurlbut Cemetery, Ledyard, New London, Connecticut, USA
 * Age at Death: About 83-84
 
 
-
 == Family
-* Mother: https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G9/gen9.MMMMMPMPM.Hannah_Unknown117.adoc[Hannah Unknown117 (? - 1735)]
+* Mother: https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G9/gen9.MMMMMPMPM.Hannah_Unknown117.adoc[Hannah Unknown117-* (? - 1735)]
 
 * Father: https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G9/gen9.MMMMMPMPP.Jonathan_Lester.adoc[Jonathan Lester (1678 - 1712)]
 
@@ -35,7 +27,7 @@ Narrative TBD
 
 == Reference Links
 * https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G8/gen8.MMMMMPMP.Peter_Lester.adoc[Book Link]
-https://cfsjksas.gigalixirapp.com/person?p=p0007http://localhost:4000/person?p=p0007https://cfsjksas.gigalixirapp.com/adoc?p=p0007http://localhost:4000/adoc?p=p0007* Geni TBD
+https://cfsjksas.gigalixirapp.com/person?p=p1415http://localhost:4000/person?p=p1415https://cfsjksas.gigalixirapp.com/adoc?p=p1415http://localhost:4000/adoc?p=p1415* Geni TBD
 * MyHeritage TBD
 * https://www.werelate.org/wiki/Person:Peter_Lester_%2819%29[WeRelate]
 * WikiTree TBD

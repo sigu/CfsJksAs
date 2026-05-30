@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 20 JAN 1676
-
 * Birthplace: Preston, New London, Connecticut, USA
-
 * Death: ABT 1732
-
 * Deathplace: Preston, New London, Connecticut, USA
-
 * Age at Death: About 55-56
-
 
 
 == Family
@@ -62,15 +56,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0889http://localhost:4000/person?p=p
 
 
 == Other
-event:  87
-<p>
-2 TYPE Reference Number
-</p>
- 87
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

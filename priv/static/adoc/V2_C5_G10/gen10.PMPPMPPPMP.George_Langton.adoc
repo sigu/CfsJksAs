@@ -7,13 +7,9 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birthplace: Jacobstow, Cornwall, England, UK
-
 * Death: 29 DEC 1676
-
 * Deathplace: Northampton, Hampshire, Massachusetts, USA
-
 
 
 == Ship
@@ -50,15 +46,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0613http://localhost:4000/person?p=p
 
 
 == Other
-event:  616
-<p>
-2 TYPE Reference Number
-</p>
- 616
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

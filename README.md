@@ -11,6 +11,10 @@ and Ann Sparrell (AS).
 
 iex -S mix phx.server
 
+## make both circle graphs
+
+Cfsjksas.DevTools.Run.graphs()
+
 ## make circle chart
 
 Cfsjksas.Chart.Circle.main("circle.svg")
@@ -49,10 +53,53 @@ Application.start(:cfsjksas)
 
 ## update gigalixir
 
+* validate gigalixir set as remote
+  * git remote -v (see if already set as remote. If yes, done. If not continue to next bullet)
+  * gigalixir (ie validate gigalixir installed, and command works at shell prompt)
+  * gigalixir account (ie validate initialized with account info)
+  * gigalixir apps (list apps)
+  * gigalixir git:remote cfsjksas (adds remote)
+
 * git push gigalixir
 * Gigalixir[https://cfsjksas.gigalixirapp.com]
+
+* Check deploy status with:      gigalixir ps -a cfsjksas
+* Check your app logs with:      gigalixir logs -a cfsjksas
+* check page itself (incl that version updated)    cfsjksas.gigalixirapp.com/
+
+* once up and running, don't forget to update dev version to next number
+
+## stack trace
+
+Process.info(self(), :current_stacktrace) |> elem(1) |> Enum.drop(2) |> Enum.each(fn entry -> IO.puts(Exception.format_stacktrace_entry(entry)) end)
+
+## list ids
+
+Cfsjksas.DevTools.ListIds.all()
 
 ## check if missing links
 
 gen=3
 Cfsjksas.Ancestors.Lineage.list_no_link_key(gen)
+
+## scratch area
+
+Mary is p0584
+
+Ruth is p0207
+
+Cfsjksas.DevTools.AncestorRelations.check([:p0584])
+
+Cfsjksas.DevTools.AncestorRelations.check([:p0001])
+
+Cfsjksas.Ancestors.AgentStores.line_to_id_a() |> Cfsjksas.Ancestors.LinesToPeople.create_people_map()
+
+if person_a.id == :p0322, do: IEx.pry()
+
+if person_a.id == :p9951, do: IEx.pry()
+
+id_l
+{11, :nw, 891}
+
+relation: [:p, :m, :m, :p, :m, :m, :m, :m, :p, :m, :m],
+  

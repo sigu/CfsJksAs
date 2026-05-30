@@ -9,7 +9,6 @@ Narrative TBD
 * Sex: F
 
 
-
 == Ship
 * Unknown
 * Unknown
@@ -45,15 +44,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0436http://localhost:4000/person?p=p
 
 
 == Other
-event:  454
-<p>
-2 TYPE Reference Number
-</p>
- 454
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

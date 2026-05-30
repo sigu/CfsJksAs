@@ -28,9 +28,9 @@
 			family_of_origin: nil,
 			family_of_procreation: [
 			],
-			father: :xxx lookup or nil,
+			father: :xxx_lookup_or nil,
 			former_name: nil,
-			given_name: "first middle",
+			given_name: "xxx_first_middle",
 			graduation: [
 			],
 			id: :xxx_look_up_or_makeup,
@@ -51,8 +51,8 @@
 			mh_fams: [
 			],
 			mh_id: nil,
-			mh_name: "xxx First /Surname/",
-			mother: :xxx lookup or nil,
+			mh_name: "xxx_First /Surname/",
+			mother: :xxx_lookup_or nil,
 			name_prefix: nil,
 			name_suffix: nil,
 			naturalized: nil,

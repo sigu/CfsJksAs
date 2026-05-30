@@ -7,11 +7,8 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: ABT 1657
-
 * Birthplace: Boston, Suffolk, Massachusetts, USA
-
 
 
 == Family
@@ -43,15 +40,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0858http://localhost:4000/person?p=p
 
 
 == Other
-event:  841
-<p>
-2 TYPE Reference Number
-</p>
- 856
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

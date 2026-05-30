@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 1614
-
 * Birthplace: England, UK
-
 * Death: 14 SEP 1677
-
 * Deathplace: Windsor, Hartford, Connecticut, USA
-
 * Age at Death: 62-63
-
 
 
 == Ship
@@ -56,15 +50,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0255http://localhost:4000/person?p=p
 
 
 == Other
-event:  273
-<p>
-2 TYPE Reference Number
-</p>
- 273
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

@@ -7,11 +7,8 @@ Narrative TBD
 
 
 * Sex: F
-
 * Death: 12 JUN 1702
-
 * Deathplace: Town of Lyme, Connecticut, USA
-
 
 
 == Family
@@ -56,15 +53,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0820http://localhost:4000/person?p=p
 
 
 == Other
-event:  806
-<p>
-2 TYPE Reference Number
-</p>
- 814
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

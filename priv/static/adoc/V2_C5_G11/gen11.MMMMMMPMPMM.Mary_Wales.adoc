@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: ABT 1613
-
 * Birthplace: Minwick, Lancashire, England, UK
-
 * Death: 1672
-
 * Deathplace: Dorchester, Boston, Massachusetts, USA
-
 * Age at Death: About 58-59
-
 
 
 == Ship
@@ -69,15 +63,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0321http://localhost:4000/person?p=p
 
 
 == Other
-event:  332
-<p>
-2 TYPE Reference Number
-</p>
- 332
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

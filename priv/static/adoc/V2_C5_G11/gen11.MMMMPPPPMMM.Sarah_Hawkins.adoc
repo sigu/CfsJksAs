@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: 1598
-
 * Birthplace: Bocking, Essex, England, UK
-
 * Death: 14 JUN 1658
-
 * Deathplace: Ipswich, Essex, Massachusetts, USA
-
 * Age at Death: 59-60
-
 
 
 == Ship
@@ -69,15 +63,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0632http://localhost:4000/person?p=p
 
 
 == Other
-event:  633
-<p>
-2 TYPE Reference Number
-</p>
- 633
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

@@ -7,11 +7,8 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birthplace: London, England, UK
-
 * Deathplace: Norwich, New London, Connecticut, USA
-
 
 
 == Ship
@@ -65,12 +62,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0518http://localhost:4000/person?p=p
 
 
 == Other
-event:  528
-<p>
-2 TYPE Reference Number
-</p>
- PE Reference Number
-
 
 == Sources
 

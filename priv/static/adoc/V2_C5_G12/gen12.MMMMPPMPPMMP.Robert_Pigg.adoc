@@ -7,11 +7,8 @@ Narrative TBD
 
 
 * Sex: M
-
 * Death: ABT 1660
-
 * Deathplace: New Haven, New Haven, Connecticut, USA
-
 
 
 == Ship
@@ -65,15 +62,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0704http://localhost:4000/person?p=p
 
 
 == Other
-event:  699
-<p>
-2 TYPE Reference Number
-</p>
- 700
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

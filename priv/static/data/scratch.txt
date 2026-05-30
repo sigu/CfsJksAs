@@ -1,0 +1,26 @@
+Abijah Stone	p0140:
+    father:
+    mother:
+
+page with everyone sorted by ida
+page with everyone sorted by last name, first name, birtdate
+
+link checks
+walk thru all people in generation order or do one individual
+has_mother
+has_father
+father=Text
+father= :ship
+has werelate_link
+father_has_werelate_link
+werelate_link_has_father
+db_father_werelate_link = werelate_father_link
+
+Possibilities
+db_father = :ship -> done
+db_father = nil, no werelate_father -> done
+db_father == werelate_father -> done
+db_father != werelate_father -> resolve
+    has db_father, no werelate_father -> add werelate_father
+    has werelate_father, no db_father -> add db_father
+    diff links -> resolve

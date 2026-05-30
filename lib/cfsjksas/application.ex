@@ -7,6 +7,12 @@ defmodule Cfsjksas.Application do
 
   @impl true
   def start(_type, _args) do
+
+    # some helper doc
+    IO.inspect("Cfsjksas.DevTools.Run.graphs()")
+    IO.inspect("Cfsjksas.Tools.Markdown.person_pages(:all)")
+
+
     children = [
       CfsjksasWeb.Telemetry,
       Cfsjksas.Repo,
@@ -14,21 +20,11 @@ defmodule Cfsjksas.Application do
       {Phoenix.PubSub, name: Cfsjksas.PubSub},
       # Start the Finch HTTP client for sending emails
       {Finch, name: Cfsjksas.Finch},
-      # start the 3 Agents for storing data
+      # start the Agents for storing data
       Cfsjksas.Ancestors.StoreAncestor,
-      Cfsjksas.Ancestors.StoreMarked,
-      Cfsjksas.Ancestors.StoreRelationMap,
-      # start some dev counters
-      Cfsjksas.DevTools.StoreCountPeople,
-      Cfsjksas.DevTools.StoreNoChildMap,
-      Cfsjksas.DevTools.StoreChildNoWerelate,
-      Cfsjksas.DevTools.StoreChildNoWerelateList,
-      Cfsjksas.DevTools.StoreLinkAlready,
-      Cfsjksas.DevTools.StoreNoFather,
-      Cfsjksas.DevTools.StoreNoMother,
-      Cfsjksas.DevTools.StoreUpdatingLink,
-      Cfsjksas.DevTools.StoreNoLinkYet,
-      Cfsjksas.DevTools.StoreNilPerson,
+      Cfsjksas.Ancestors.StoreLinesToIdA,
+      Cfsjksas.Ancestors.StoreIdAToLines,
+      Cfsjksas.Ancestors.StoreMarkedSectors,
       # Start a worker by calling: Cfsjksas.Worker.start_link(arg)
       # {Cfsjksas.Worker, arg},
       # Start to serve requests, typically the last entry

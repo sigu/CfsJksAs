@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 20 MAR 1624
-
 * Birthplace: Hook Norton, Oxfordshire, England, UK
-
 * Death: 26 APR 1710
-
 * Deathplace: Hingham, Plymouth, Massachusetts, USA
-
 * Age at Death: 86
-
 
 
 == Ship
@@ -56,15 +50,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0200http://localhost:4000/person?p=p
 
 
 == Other
-event:  222
-<p>
-2 TYPE Reference Number
-</p>
- 222
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

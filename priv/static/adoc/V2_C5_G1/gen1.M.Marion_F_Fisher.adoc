@@ -1,30 +1,35 @@
 = Marion F Fisher (1904 - 2002)
 
-Narrative TBD
+Her father was away on business when she was born.
+Her mother named her Helene and that is on her birth certificate 
+recorded in New York City. 
+Her father came home and didn't like Helene and they changed her name to Marion. 
+Growing up she only knew her name was Marion. 
+Birth certificates were not required when she first got her drivers license, 
+and when she was married. 
+When they started requiring birth certificates for drivers licenses, 
+she got her birth certificate and discovered it was for Helene. 
+Her mother explained how that came to be.",
 
+
+add note to see Ida for interesting background on her birth
+
+
+add story about maid and butler stealing silver and locking her in closet
 
 == Vital Stats
 
 
 * Sex: F
-
 * Birth: 27 NOV 1904
-
 * Birthplace: New York, New York, New York, USA
-
 * Death: 17 DEC 2002
-
 * Deathplace: Plymouth, Plymouth, Massachusetts, USA
-
 * Buried: 
-<p>
-2 PLAC Hope Cemetery, Worcester, Worcester, Massachusetts, USA
-</p>
 
+* PLAC Hope Cemetery, Worcester, Worcester, Massachusetts, USA
 * Age at Death: 98
-
 * Death Cause: Chronic Pulmonary Disease/ Dementia
-
 
 
 == Family
@@ -36,7 +41,7 @@ Narrative TBD
 
 == Reference Links
 * https://github.com/sparrell/cfs_ancestors/blob/main/Vol_02_Ships/V2_C5_Ancestors/V2_C5_G1/gen1.M.Marion_F_Fisher.adoc[Book Link]
-https://cfsjksas.gigalixirapp.com/person?p=p0074http://localhost:4000/person?p=p0074https://cfsjksas.gigalixirapp.com/adoc?p=p0074http://localhost:4000/adoc?p=p0074* https://www.geni.com/people/Marion-Sparrell/6000000007522238879[Geni]
+https://cfsjksas.gigalixirapp.com/person?p=p0005http://localhost:4000/person?p=p0005https://cfsjksas.gigalixirapp.com/adoc?p=p0005http://localhost:4000/adoc?p=p0005* https://www.geni.com/people/Marion-Sparrell/6000000007522238879[Geni]
 * https://www.myheritage.com/profile-20674952-23000288/marion-f-fisher-sparrell[MyHeritage]
 * https://www.werelate.org/wiki/Person:Marion_Fisher_%281%29[WeRelate]
 * WikiTree TBD
@@ -49,40 +54,35 @@ https://cfsjksas.gigalixirapp.com/person?p=p0074http://localhost:4000/person?p=p
 
 == Other
 census: 
-<p>
-2 DATE 1940
-2 PLAC Pierce St, N Kingstown, Wash, Rhode Island, USA
-2 AGE 35-36
-</p>
 
+* DATE 1940
+
+* PLAC Pierce St, N Kingstown, Wash, Rhode Island, USA
+
+* AGE 35-36
 education:  B.A., Rhode Island College of Education
-<p>
-2 DATE ABT 1960
-2 AGE About 55-56
-</p>
- Willimantic Normal School (now E.C.U.)
-<p>
-2 DATE 1926
-2 AGE 21-22
-</p>
 
+* DATE ABT 1960
+
+* AGE About 55-56 Willimantic Normal School (now E.C.U.)
+
+* DATE 1926
+
+* AGE 21-22
 event:  Chronic Pulmonary Disease/ Dementia
-<p>
-2 TYPE _DCAUSE
-</p>
 
+* TYPE _DCAUSE
 notes: Birth recorded in New York City as "Helene", name changed by father to "Marion".
-
 occupation: Primary School Teacher
-
 residence: 
-<p>
-2 DATE 1935
-2 AGE 30-31
-2 ADDR
-3 ADR2 W Kingston, Wash, Rhode Island
-</p>
 
+* DATE 1935
+
+* AGE 30-31
+
+* ADDR
+
+* ADR2 W Kingston, Wash, Rhode Island
 
 == Sources
 

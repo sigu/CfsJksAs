@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 8 FEB 1723
-
 * Birthplace: Preston, New London, Connecticut, USA
-
 * Death: BEF 2 JAN 1787
-
 * Deathplace: Preston, New London, Connecticut, USA
-
 * Age at Death: About 63
-
 
 
 == Family
@@ -48,15 +42,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0123http://localhost:4000/person?p=p
 
 
 == Other
-event:  153
-<p>
-2 TYPE Reference Number
-</p>
- 153
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

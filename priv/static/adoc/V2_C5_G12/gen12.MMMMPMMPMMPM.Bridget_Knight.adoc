@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: ABT 1611
-
 * Birthplace: Somersetshire, England, UK
-
 * Death: 26 OCT 1672
-
 * Deathplace: Salem, Essex, Massachusetts, USA
-
 * Age at Death: About 60-61
-
 
 
 == Ship
@@ -71,15 +65,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0462http://localhost:4000/person?p=p
 
 
 == Other
-event:  478
-<p>
-2 TYPE Reference Number
-</p>
- 478
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

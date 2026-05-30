@@ -7,15 +7,10 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 1733
-
 * Birthplace: Groton, New London, Connecticut, USA
-
 * Death: 10 OCT 1774
-
 * Age at Death: 40-41
-
 
 
 == Family
@@ -56,15 +51,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0893http://localhost:4000/person?p=p
 
 
 == Other
-event:  873
-<p>
-2 TYPE Reference Number
-</p>
- 888
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

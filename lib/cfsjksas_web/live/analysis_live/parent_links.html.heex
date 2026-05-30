@@ -1,0 +1,102 @@
+<h1 class="font-semibold text-3xl mb-4"><%= @name %></h1>
+
+<p>
+<b>Child:</b>
+</p>
+<div>
+  <ul class="list-disc pl-6">
+    <li><i>ID: </i>
+      <span class="mb-4 text-blue-400">
+        <%= @id_a %>
+      </span>
+    </li>
+    <li><i>Name: </i>
+      <span class="mb-4 text-blue-400">
+        <%= @name %>
+      </span>
+    </li>
+    <li><i>WeRelate: </i>
+      <span class="mb-4 text-blue-400">
+        <a href={"@werelate"}> <%= @werelate %> </a>
+      </span>
+    </li>
+  </ul>
+</div>
+<br>
+
+
+<p>
+<table style="border: 1px solid black;">
+ <tr style="border: 1px solid black;">
+    <th style="border: 1px solid black;"> Father ID </th>
+    <th style="border: 1px solid black;"> Father Name </th>
+    <th style="border: 1px solid black;"> </th>
+    <th style="border: 1px solid black;"> Mother ID </th>
+    <th style="border: 1px solid black;"> Mother Name </th>
+</tr>
+<tr style="border: 1px solid black;">
+  <td style="border: 1px solid black;"> <a href={~p"/parentlinks?p=#{@db_father}"}> <%= @db_father %> </a> </td>
+  <td style="border: 1px solid black;"> <%= @father_name %> </td>
+  <td>  </td>
+  <td style="border: 1px solid black;"> <a href={~p"/parentlinks?p=#{@db_mother}"}> <%= @db_mother %> </a> </td>
+  <td style="border: 1px solid black;"> <%= @mother_name %> </td>
+</tr>
+<tr style="border: 1px solid black;">
+    <th colspan="2" style="border: 1px solid black;"> Werelate/Father </th>
+    <th>  </th>
+    <th colspan="2" style="border: 1px solid black;"> Werelate/Mother</th>
+</tr>
+<tr>
+  <td colspan="2" class="text-blue-400" style="border: 1px solid black;">
+    <a href={"@werelate_father"}> <%= @werelate_father %> </a>
+  </td>
+  <td>  </td>
+  <td colspan="2" class="text-blue-400" style="border: 1px solid black;">
+    <a href={"@werelate_mother"}> <%= @werelate_mother %> </a>
+  </td>
+</tr>
+<tr style="border: 1px solid black;">
+    <th colspan="2" style="border: 1px solid black;"> WikiTree/Father</th>
+    <th>  </th>
+    <th colspan="2" style="border: 1px solid black;"> WikiTree/Mother</th>
+</tr>
+<tr>
+  <td colspan="2" class="text-blue-400" style="border: 1px solid black;">
+    "Future Feature"
+  </td>
+  <td>  </td>
+  <td colspan="2" class="text-blue-400" style="border: 1px solid black;">
+    "Future Feature"
+  </td>
+</tr>
+<tr style="border: 1px solid black;">
+    <th colspan="2" style="border: 1px solid black;"> Geni/Father</th>
+    <th>  </th>
+    <th colspan="2" style="border: 1px solid black;"> Geni/Mother</th>
+</tr>
+<tr>
+  <td colspan="2" class="text-blue-400" style="border: 1px solid black;">
+    "Future Feature"
+  </td>
+  <td>  </td>
+  <td colspan="2" class="text-blue-400" style="border: 1px solid black;">
+    "Future Feature"
+  </td>
+</tr>
+<tr style="border: 1px solid black;">
+    <th colspan="2" style="border: 1px solid black;"> MyHeritage/Father</th>
+    <th>  </th>
+    <th colspan="2" style="border: 1px solid black;"> MyHeritage/Mother</th>
+</tr>
+<tr>
+  <td colspan="2" class="text-blue-400" style="border: 1px solid black;">
+    "Future Feature"
+  </td>
+  <td>  </td>
+  <td colspan="2" class="text-blue-400" style="border: 1px solid black;">
+    "Future Feature"
+  </td>
+</tr>
+</table>
+</p>
+

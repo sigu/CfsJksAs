@@ -7,13 +7,9 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birthplace: Rattlesden, Suffolk, England, UK
-
 * Death: 1 MAR 1660
-
 * Deathplace: Ipswich, Essex, Massachusetts, USA
-
 
 
 == Ship
@@ -65,15 +61,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0588http://localhost:4000/person?p=p
 
 
 == Other
-event:  593
-<p>
-2 TYPE Reference Number
-</p>
- 593
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

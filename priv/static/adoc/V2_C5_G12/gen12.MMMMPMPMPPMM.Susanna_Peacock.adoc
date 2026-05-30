@@ -7,11 +7,8 @@ Narrative TBD
 
 
 * Sex: F
-
 * Death: 25 JAN 1673
-
 * Deathplace: Newbury, Essex, Massachusetts, USA
-
 
 
 == Ship
@@ -65,15 +62,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0591http://localhost:4000/person?p=p
 
 
 == Other
-event:  596
-<p>
-2 TYPE Reference Number
-</p>
- 596
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

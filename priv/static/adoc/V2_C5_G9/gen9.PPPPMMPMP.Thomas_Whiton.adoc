@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 18 MAY 1662
-
 * Birthplace: Hingham, Plymouth, Massachusetts, USA
-
 * Death: 17 SEP 1708
-
 * Deathplace: Hingham, Plymouth, Massachusetts, USA
-
 * Age at Death: 46
-
 
 
 == Family
@@ -50,15 +44,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0199http://localhost:4000/person?p=p
 
 
 == Other
-event:  221
-<p>
-2 TYPE Reference Number
-</p>
- 221
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

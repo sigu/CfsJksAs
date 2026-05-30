@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: F
-
 * Birth: 7 MAY 1666
-
 * Birthplace: Roxbury, Boston, Suffolk, Massachusetts, USA
-
 * Death: 15 SEP 1751
-
 * Deathplace: Hingham, Plymouth, Massachusetts, USA
-
 * Age at Death: 85
-
 
 
 == Family
@@ -50,15 +44,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0198http://localhost:4000/person?p=p
 
 
 == Other
-event:  220
-<p>
-2 TYPE Reference Number
-</p>
- 220
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 

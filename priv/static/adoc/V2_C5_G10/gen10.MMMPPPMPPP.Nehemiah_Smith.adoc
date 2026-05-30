@@ -7,17 +7,11 @@ Narrative TBD
 
 
 * Sex: M
-
 * Birth: 25 OCT 1646
-
 * Birthplace: Marshfield, Plymouth, Massachusetts, USA
-
 * Death: 8 AUG 1727
-
 * Deathplace: Norwich, New London, Connecticut, USA
-
 * Age at Death: 80
-
 
 
 == Family
@@ -64,15 +58,6 @@ https://cfsjksas.gigalixirapp.com/person?p=p0872http://localhost:4000/person?p=p
 
 
 == Other
-event:  854
-<p>
-2 TYPE Reference Number
-</p>
- 869
-<p>
-2 TYPE Reference Number
-</p>
-
 
 == Sources
 
