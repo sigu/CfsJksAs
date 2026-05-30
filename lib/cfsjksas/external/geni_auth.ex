@@ -1,12 +1,14 @@
 defmodule CfsJksAs.External.GeniAuth do
+  @moduledoc """
+  # Login with email + password directly (Trusted App / password grant)
+  """
   require Logger
   @token_url "https://www.geni.com/platform/oauth/request_token"
-  @profile_url "https://www.geni.com/api/profile"
 
-  def login(app_id \\ nil, user_name \\ nil, password \\ nil, scope \\ nil) do
+  def login(app_id \\ nil, username \\ nil, password \\ nil, scope \\ nil) do
     response =
       with {:ok, app_id} <- get_app_id(app_id),
-           {:ok, user_name} <- get_username(username),
+           {:ok, username} <- get_username(username),
            {:ok, password} <- get_password(password) do
         params =
           %{
