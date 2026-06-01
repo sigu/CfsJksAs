@@ -1,71 +1,109 @@
 defmodule CfsJksAs.External.GeniAuth do
-  @moduledoc """
-  # Login with email + password directly (Trusted App / password grant)
+  @authorize_url "https://sandbox.geni.com/platform/oauth/authorize"
+  @token_url "https://sandbox.geni.com/platform/oauth/request_token"
+
+  @doc """
+  Builds the Geni OAuth authorization URL and opens it in the system browser.
+
+  Returns `{:ok, url}` so callers can also handle the URL themselves.
   """
-  require Logger
-  @token_url "https://www.geni.com/platform/oauth/request_token"
 
-  def login(app_id \\ nil, username \\ nil, password \\ nil, scope \\ nil) do
+  def authorize(client_id \\ nil, redirect_uri \\ nil) do
+    with {:ok, client_id} <- get_client_id(client_id),
+         {:ok, redirect_uri} <- get_redirect_uri(redirect_uri) do
+      params =
+        URI.encode_query(%{
+          client_id: client_id,
+          redirect_uri: redirect_uri,
+          response_type: "code",
+          dispaly: "web"
+        })
+
+      url = "#{@authorize_url}?#{params}" |> IO.inspect()
+      Logger.info("[GeniAuth] Opening browser for Geni login: #{url}")
+      open_browser(url)
+      {:ok, url}
+    end
+  end
+
+  @doc """
+  Exchange the authorization code returned by Geni for an access token.
+   This is the code the application gets after authorization on the browser and
+   redirects back to the application on success.
+
+  Returns {:ok, token_map} | {:error, reason}
+  where token_map has: access_token, refresh_token, expires_in
+  """
+
+  def get_access_token(code) do
     response =
-      with {:ok, app_id} <- get_app_id(app_id),
-           {:ok, username} <- get_username(username),
-           {:ok, password} <- get_password(password) do
+      with {:ok, client_id} <- get_client_id(nil),
+           {:ok, app_secret} <- get_app_secret(nil),
+           {:ok, redirect_uri} <- get_redirect_uri(nil) do
         params =
-          %{
-            client_id: app_id,
-            username: username,
-            password: password,
-            grant_type: "password"
-          }
-          |> then(fn p -> if scope, do: Map.put(p, :scope, scope), else: p end)
+          URI.encode_query(%{
+            client_id: client_id,
+            client_secret: app_secret,
+            redirect_uri: redirect_uri,
+            code: code,
+            grant_type: "authorization_code"
+          })
 
-        Logger.info("🔐 Requesting access token from Geni...")
-        Req.get!(@token_url, params: params)
+        url = "#{@token_url}?#{params}"
+
+        Req.get(url)
       end
 
-    case response.status do
-      200 ->
-        body = response.body
+    case response do
+      {:ok, %{status: 200, body: token}} ->
+        {:ok, token}
 
-        if Map.has_key?(body, "access_token") do
-          {:ok, body}
-          Logger.info("Geni, login successful")
-        else
-          Logger.error("Geni login failed")
+      {:ok, %{body: %{"error" => err, "error_description" => desc}}} ->
+        {:error, "#{err}: #{desc}"}
 
-          {:error, body["error_description"] || body["error"] || "Unknown error"}
-        end
-
-      status ->
-        Logger.error("Geni login failed")
-        {:error, "HTTP #{status}: #{inspect(response.body)}"}
+      {:error, reason} ->
+        {:error, reason}
     end
   end
 
-  defp get_app_id(app_id) do
-    app_id = app_id || System.get_env("APP_ID")
+  defp get_client_id(client_id) do
+    client_id =
+      client_id || System.get_env("GENI_CLIENT_ID")
 
-    case app_id do
-      nil -> {:error, :missing_app_id}
-      app_id -> {:ok, app_id}
+    case client_id do
+      nil -> {:error, "missing geni client_id"}
+      client_id -> {:ok, client_id}
     end
   end
 
-  defp get_username(username) do
-    username = username || System.get_env("USERNAME")
+  defp get_redirect_uri(redirect_uri) do
+    redirect_uri =
+      redirect_uri ||
+        System.get_env(
+          "GENI_REDIRECT_URI"
+        )
 
-    case username do
-      nil -> {:error, :missing_username}
-      username -> {:ok, username}
+    case redirect_uri do
+      nil -> {:error, "missing geni redirect_uri"}
+      redirect_uri -> {:ok, redirect_uri}
     end
   end
 
-  defp get_password(password) do
-    password = password || System.get_env("PASSWORD")
+  defp get_app_secret(app_secret) do
+    app_secret =
+      app_secret || System.get_env("GENI_APP_SECRET")
 
-    case password do
-      nil -> {:error, :missing_password}
-      password -> {:ok, password}
+    case app_secret do
+      nil -> {:error, "missing geni_ app_secret"}
+      app_secret -> {:ok, app_secret}
+    end
+  end
+
+  def open_browser(url) do
+    case :os.type() do
+      {:unix, :darwin} -> System.cmd("open", [url])
+      {:unix, _} -> System.cmd("xdg-open", [url])
+      {:win32, _} -> System.cmd("cmd", ["/c", "start", url])
     end
   end
 end
