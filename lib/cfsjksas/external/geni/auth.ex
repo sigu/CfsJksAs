@@ -53,7 +53,7 @@ defmodule CfsJksAs.External.Geni.Auth do
 
         url = "#{@token_url}?#{params}"
 
-        Req.get(url) |> IO.inspect
+        Req.get(url)
       end
 
     case response do
@@ -111,6 +111,7 @@ defmodule CfsJksAs.External.Geni.Auth do
     end
   end
 
+  # TODO, --- extract the errors from html body
   defp extract_reason(body) do
     IO.inspect body
     "failed"

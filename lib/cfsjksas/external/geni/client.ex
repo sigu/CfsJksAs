@@ -11,7 +11,7 @@ defmodule CfsJksAs.External.Geni.Client do
       Req.get!(@profile_url,
         headers: [{"Authorization", "Bearer #{access_token}"}]
       )
-    #add logger
+    # TODO------- add logger
     case response.status do
       200 -> {:ok, response.body}
       401 -> {:error, "Unauthorized — token may be invalid or expired"}

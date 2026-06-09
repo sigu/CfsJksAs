@@ -33,10 +33,9 @@ defmodule CfsjksasWeb.GeniAuthLive do
      |> assign(:error, "Invalid or missing authorization parameters.")}
   end
 
-  @impl true
-  def handle_event("close", _params, socket) do
-    {:noreply, push_event(socket, "close-tab", %{})}
-  end
+
+
+  # TODO -------Implement the close pop up functionality
 
   @impl true
   def render(assigns) do
