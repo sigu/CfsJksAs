@@ -1,4 +1,6 @@
-defmodule CfsJksAs.External.GeniAuth do
+defmodule CfsJksAs.External.Geni.Auth do
+    require Logger
+
   @authorize_url "https://sandbox.geni.com/platform/oauth/authorize"
   @token_url "https://sandbox.geni.com/platform/oauth/request_token"
 
@@ -19,7 +21,7 @@ defmodule CfsJksAs.External.GeniAuth do
           dispaly: "web"
         })
 
-      url = "#{@authorize_url}?#{params}" |> IO.inspect()
+      url = "#{@authorize_url}?#{params}"
       Logger.info("[GeniAuth] Opening browser for Geni login: #{url}")
       open_browser(url)
       {:ok, url}
@@ -35,11 +37,11 @@ defmodule CfsJksAs.External.GeniAuth do
   where token_map has: access_token, refresh_token, expires_in
   """
 
-  def get_access_token(code) do
+  def get_access_token(code, client_id \\ nil, secret \\ nil, redirect \\ nil) do
     response =
-      with {:ok, client_id} <- get_client_id(nil),
-           {:ok, app_secret} <- get_app_secret(nil),
-           {:ok, redirect_uri} <- get_redirect_uri(nil) do
+      with {:ok, client_id} <- get_client_id(client_id),
+           {:ok, app_secret} <- get_app_secret(secret),
+           {:ok, redirect_uri} <- get_redirect_uri(redirect) do
         params =
           URI.encode_query(%{
             client_id: client_id,
@@ -51,18 +53,22 @@ defmodule CfsJksAs.External.GeniAuth do
 
         url = "#{@token_url}?#{params}"
 
-        Req.get(url)
+        Req.get(url) |> IO.inspect
       end
 
     case response do
-      {:ok, %{status: 200, body: token}} ->
-        {:ok, token}
+      {:ok, %Req.Response{status: 200, body: token}} ->
 
-      {:ok, %{body: %{"error" => err, "error_description" => desc}}} ->
-        {:error, "#{err}: #{desc}"}
+      Logger.info("Fetching access token successful.Token #{token["access_token"]}")
 
-      {:error, reason} ->
-        {:error, reason}
+      {:ok, token}
+
+      {:ok, %Req.Response{status: status, body: body}} ->
+      reason  = extract_reason(body)
+      Logger.error("Fetching acess token failed with status #{status}: #{inspect(reason)} ")
+
+       {:error, reason}
+
     end
   end
 
@@ -79,9 +85,7 @@ defmodule CfsJksAs.External.GeniAuth do
   defp get_redirect_uri(redirect_uri) do
     redirect_uri =
       redirect_uri ||
-        System.get_env(
-          "GENI_REDIRECT_URI"
-        )
+        System.get_env("GENI_REDIRECT_URI")
 
     case redirect_uri do
       nil -> {:error, "missing geni redirect_uri"}
@@ -105,5 +109,10 @@ defmodule CfsJksAs.External.GeniAuth do
       {:unix, _} -> System.cmd("xdg-open", [url])
       {:win32, _} -> System.cmd("cmd", ["/c", "start", url])
     end
+  end
+
+  defp extract_reason(body) do
+    IO.inspect body
+    "failed"
   end
 end

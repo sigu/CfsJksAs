@@ -34,6 +34,8 @@ defmodule CfsjksasWeb.Router do
     live "/namelist", AnalysisLive.NameList, :home
     live "/sectorlist", AnalysisLive.SectorList, :home
     live "/parentlinks", AnalysisLive.ParentLinks, :home
+    live "/auth/geni/callback", GeniAuthLive, :home
+
   end
 
   # Other scopes may use custom stacks.

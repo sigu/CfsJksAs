@@ -1,4 +1,4 @@
-defmodule CfsJksAs.External.GeniClient do
+defmodule CfsJksAs.External.Geni.Client do
   require Logger
 
   @profile_url "https://sandbox.geni.com/api/profile"
@@ -11,7 +11,7 @@ defmodule CfsJksAs.External.GeniClient do
       Req.get!(@profile_url,
         headers: [{"Authorization", "Bearer #{access_token}"}]
       )
-
+    #add logger
     case response.status do
       200 -> {:ok, response.body}
       401 -> {:error, "Unauthorized — token may be invalid or expired"}
