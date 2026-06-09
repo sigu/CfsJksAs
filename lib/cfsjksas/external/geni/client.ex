@@ -1,6 +1,6 @@
 defmodule CfsJksAs.External.Geni.Client do
   require Logger
-
+  ### TODO---- get url based on env
   @profile_url "https://sandbox.geni.com/api/profile"
 
   @doc """

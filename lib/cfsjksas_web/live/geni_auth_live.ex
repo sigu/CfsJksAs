@@ -35,7 +35,7 @@ defmodule CfsjksasWeb.GeniAuthLive do
 
 
 
-  # TODO -------Implement the close pop up functionality
+  # TODO -------Implement the close pop up  button functionality
 
   @impl true
   def render(assigns) do

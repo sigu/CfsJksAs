@@ -1,6 +1,7 @@
 defmodule CfsJksAs.External.Geni.Auth do
     require Logger
 
+    ### TODO---- get url based on env
   @authorize_url "https://sandbox.geni.com/platform/oauth/authorize"
   @token_url "https://sandbox.geni.com/platform/oauth/request_token"
 
