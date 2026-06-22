@@ -27,15 +27,17 @@ defmodule CfsjksasWeb.Router do
     live "/stats", CircleLive.StatsView, :home
     live "/intermediates", CircleLive.IntermediateView, :home
     live "/adoc", CircleLive.AdocView, :home
-    live "/addp", CircleLive.AddPerson, :home  # rm.
-    live "/add_p", CircleLive.NewPersonLive, :home  # rm.
+    # rm.
+    live "/addp", CircleLive.AddPerson, :home
+    # rm.
+    live "/add_p", CircleLive.NewPersonLive, :home
     live "/entry", EntryLive.AddPersonLive, :home
     live "/idlist", AnalysisLive.IdList, :home
     live "/namelist", AnalysisLive.NameList, :home
     live "/sectorlist", AnalysisLive.SectorList, :home
     live "/parentlinks", AnalysisLive.ParentLinks, :home
-    live "/auth/geni/callback", GeniAuthLive, :home
-
+    live "/geni/auth/callback", Geni.AuthLive, :home
+    live "/geni/auth/success", Geni.AuthSuccessLive
   end
 
   # Other scopes may use custom stacks.

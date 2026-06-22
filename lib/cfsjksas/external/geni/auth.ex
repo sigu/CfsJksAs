@@ -1,7 +1,7 @@
 defmodule CfsJksAs.External.Geni.Auth do
-    require Logger
+  require Logger
 
-    ### TODO---- get url based on env
+  ### TODO---- get url based on env
   @authorize_url "https://sandbox.geni.com/platform/oauth/authorize"
   @token_url "https://sandbox.geni.com/platform/oauth/request_token"
 
@@ -39,6 +39,8 @@ defmodule CfsJksAs.External.Geni.Auth do
   """
 
   def get_access_token(code, client_id \\ nil, secret \\ nil, redirect \\ nil) do
+    Logger.info("Fetching access token......")
+
     response =
       with {:ok, client_id} <- get_client_id(client_id),
            {:ok, app_secret} <- get_app_secret(secret),
@@ -59,17 +61,17 @@ defmodule CfsJksAs.External.Geni.Auth do
 
     case response do
       {:ok, %Req.Response{status: 200, body: token}} ->
+        IO.inspect(token, label: :token)
 
-      Logger.info("Fetching access token successful.Token #{token["access_token"]}")
+        Logger.info("Fetching access token successful.Token #{token["access_token"]}")
 
-      {:ok, token}
+        {:ok, token}
 
       {:ok, %Req.Response{status: status, body: body}} ->
-      reason  = extract_reason(body)
-      Logger.error("Fetching acess token failed with status #{status}: #{inspect(reason)} ")
+        reason = extract_reason(body)
+        Logger.error("Fetching acess token failed with status #{status}: #{inspect(reason)} ")
 
-       {:error, reason}
-
+        {:error, reason}
     end
   end
 
@@ -114,7 +116,7 @@ defmodule CfsJksAs.External.Geni.Auth do
 
   # TODO, --- extract the errors from html body
   defp extract_reason(body) do
-    IO.inspect body
+    IO.inspect(body)
     "failed"
   end
 end
