@@ -16,18 +16,18 @@ defmodule CfsjksasWeb.Geni.AuthLive do
         {:ok, push_navigate(socket, to: url)}
 
       {:error, reason} ->
-        {:ok.push_navigate(socket, to: "/geni/auth/fail?error=reason")}
+        {:ok, push_navigate(socket, to: "/geni/auth/fail?error=reason")}
     end
   end
 
   def mount(%{"status" => "unauthorized", "message" => msg}, _session, socket) do
     error_msg = "Geni authorization was cancelled: #{msg}"
-    {:ok.push_navigate(socket, to: "/geni/auth/fail?error=error_msg")}
+    {:ok, push_navigate(socket, to: "/geni/auth/fail?error=#{error_msg}")}
   end
 
   # Fallback for unexpected params
   def mount(_params, _session, socket) do
     error_msg = "Invalid or missing authorization parameters."
-    {:ok.push_navigate(socket, to: "/geni/auth/fail?error=error_msg")}
+    {:ok, push_navigate(socket, to: "/geni/auth/fail?error=error_msg")}
   end
 end

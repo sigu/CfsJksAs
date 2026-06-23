@@ -38,6 +38,7 @@ defmodule CfsjksasWeb.Router do
     live "/parentlinks", AnalysisLive.ParentLinks, :home
     live "/geni/auth/callback", Geni.AuthLive, :home
     live "/geni/auth/success", Geni.AuthSuccessLive
+    live "/geni/auth/fail", Geni.AuthFailLive
   end
 
   # Other scopes may use custom stacks.
