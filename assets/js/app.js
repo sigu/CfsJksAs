@@ -28,6 +28,14 @@ let liveSocket = new LiveSocket("/live", Socket, {
   params: {_csrf_token: csrfToken}
 })
 
+window.addEventListener("phx:copy", (event) => {
+  console.dir(event.target.dataset.value);
+let text = event.target.dataset.value;
+  navigator.clipboard.writeText(text).then(() => {
+    console.log("All done!");
+  })
+})
+
 // Show progress bar on live navigation and form submits
 topbar.config({barColors: {0: "#29d"}, shadowColor: "rgba(0, 0, 0, .3)"})
 window.addEventListener("phx:page-loading-start", _info => topbar.show(300))
